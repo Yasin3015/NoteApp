@@ -1,0 +1,285 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,600;1,400;1,700&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Koulen&family=Lobster&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Serif+HK:wght@200;300;400;500;600;700;800&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300;1,400;1,700&family=Tajawal:wght@200;300;700;800&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2876FD;
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    overflow: hidden;
+}
+.note{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.note__form{
+    width: 65%;
+}
+.note__form h1{
+    text-transform: capitalize;
+    font-size: 40px;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.note__form__title, 
+.note__form__text {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.note__form label{
+    font-size: 20px;
+    width: 100%;
+    display: block;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.note__form__title input,
+.note__form__text textarea{
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.note__form__text textarea{
+    height: 100px;
+}
+.note__form .my-btn{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    border: 1px solid white;
+    background-color: inherit;
+    text-transform: capitalize;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.note__form .my-btn:hover{
+    background-color: blue;
+    border: 1px solid blue;
+}
+
+.note__container{
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.note__adds{
+    width: 35%;
+    border-right: 1px solid white;
+}
+.note__adds span:hover{
+    cursor: pointer;
+    color: azure;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #3c048591;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8d7aeb;
+}
+
+.note__adds .note__adds__heading{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #7824E3;
+    text-align: center;
+}
+.note__adds .note__adds__heading h1{
+    color: white;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+.note__adds .mynotes{
+    width: 100%;
+    /* overflow-y: scroll; */
+    height: 80vh;
+}
+.mynotes:hover{
+    overflow-y: scroll;
+    transition: all .5s;
+}
+.note__adds .mynotes .note__adds__mynote{
+    background-color: #5534FA;
+    /* box-shadow: 1px 2px 3px 2px gray; */
+    margin-top: 15px ;
+    margin-bottom: 15px ;
+    padding: 20px;
+    animation-name: scaleing;
+    animation-duration: .75s;
+    animation-iteration-count: 1;
+}
+
+.note__adds__mynote .mynoteHead{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.note__adds__mynote h4{
+    font-size: 20px ;
+    text-transform: capitalize;
+}
+.note__adds__mynote p{
+    margin-bottom: 10px;
+    color: rgb(246, 239, 239);
+}
+.note__adds__mynote .note__adds__mynote__date{
+    margin-top: 25px !important;
+    color: rgb(232, 230, 230);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: .5px solid gray;
+}
+/* =================================== make it responsive==================== */
+@media (max-width: 768px) {
+    body{
+        overflow-y: scroll !important;
+    }
+    .note{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .note__form,.note__adds{
+        width: 100%;
+        margin-bottom: 20px;
+        overflow-y: none;
+        height: fit-content;
+    }
+    .note__adds .mynotes .note__adds__mynote{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+    }
+}
+
+/*================================== simple animation ==================== */
+@keyframes scaleing {
+    0%{
+        transform: scale(0);
+    }100%{
+        transform: scale(1);
+    }
+}
+/* =========================== start model ====================================== */
+
+.model{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px !important;
+    left: 0;
+    padding: 0px !important;
+    background-color: rgba(0, 0, 0, 0.405);
+    z-index: 99999999999999999999999999999999999;
+    display: none;
+}
+.model .container{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    position: relative;
+    height: 100vh !important;
+}
+.model .container .model__message{
+    width: 540px;
+    margin: auto;
+    margin: auto;
+    background-color: #02184b;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.model .container .model__message .model__message__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px rgb(187, 187, 187) solid;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 100 !important;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(77, 77, 77);
+}
+#cancelModel:hover{
+    color: black;
+    cursor: pointer;
+}
+.model .container .model__message .model__message__text{
+    border-bottom: 1px rgb(187, 187, 187) solid;
+    font-size: 16px;
+    text-align: left;
+    color: gray;
+    padding: 20px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+.model .container .model__message .model__message__buttons{
+    padding: 20px;
+    text-align: right;
+}
+.model .container .model__message .model__message__buttons button{
+    padding: 10px ;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.primary{
+    background-color: #0b5ed7;
+}
+.primary:hover{
+    background-color: rgb(1, 1, 175);
+}
+.secondary{
+    background-color: rgb(87, 87, 87);
+}
+.secondary:hover{
+    background-color: rgb(62, 62, 62);
+}
+@media (max-width:650px) {
+    .model .container .model__message{
+        width: 100% !important;
+    }
+}
+/* =========================== end model ====================================== */

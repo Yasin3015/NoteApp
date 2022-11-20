@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/Style.css">
+    <link rel="icon" href="assets/imgs/icons8-note-64.png">
+</head>
+<body>
+    <!-- ======================== model creation ============== -->
+
+    <div class="model" id="theModel">
+        <div class="container">
+            <div class="model__message">
+                <h2 class="model__message__header">delete all <span id="cancelModel">&#128473;</span></h2>
+                <p class="model__message__text">Are you sure &#x3F;  you will delete all items you add </p>
+                <div class="model__message__buttons">
+                    <button type="button" class="secondary" id="close">cancel</button>
+                    <button type="button" class="primary" id="deleteAll">yes,delete all</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== end model creation ============== -->
+    <div class="note">
+        <div class="note__form">
+            <div class="note__container">
+                <h1>add new note</h1>
+                <div class="note__form__title">
+                    <label>note title</label>
+                    <input type="text" placeholder="title" id="noteTitle">
+                </div>
+                <div class="note__form__text">
+                    <label>notes </label>
+                    <textarea placeholder="add your notes" id="noteText"></textarea>
+                </div>
+                <input type="button" class="my-btn" id="addTheNote" value="add new note">
+            </div>
+        </div>
+        <div class="note__adds" id="notesContainer">
+            <div class="note__adds__heading">
+                <div class="note__container">
+                    <h1>your notes</h1>
+                </div>
+            </div>
+            <div class="mynotes" id="notes">
+                
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/note.js"></script>
+</body>
+</html>
