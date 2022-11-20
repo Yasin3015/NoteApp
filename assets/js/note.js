@@ -20,6 +20,13 @@ if(localStorage.getItem("newNote")=== null){
         elementId = notes.length;
     } 
 }
+if (localStorage.getItem("titleValue") != " ") {
+    document.getElementById('noteTitle').value = localStorage.getItem("titleValue");
+    document.getElementById('noteText').value = localStorage.getItem("bodyValue");
+} else {
+    document.getElementById('noteTitle').value = "";
+    document.getElementById('noteText').value = "";
+}
 // add note to my notes div
 function addToBody() {
     if(document.getElementById('noteTitle').value != "" && document.getElementById('noteText').value != ""){
@@ -80,6 +87,8 @@ function addToBody() {
                 }
                 document.getElementById('noteTitle').value = notes[index].notetitle;
                 document.getElementById('noteText').value = notes[index].notetext;
+                localStorage.setItem("titleValue", notes[index].notetitle);
+                localStorage.setItem("bodyValue", notes[index].notetext);
                 div.remove();
                 notes.splice(index, 1);
                 localStorage.setItem("newNote",JSON.stringify(notes));
@@ -98,6 +107,8 @@ function addToBody() {
 additionButton.onclick= ()=>{
     addToBody()
     additionButton.value="add new note";
+    localStorage.setItem("titleValue", " ");
+    localStorage.setItem("bodyValue", " ");
 };
 
 function createNewNote(){
@@ -143,6 +154,8 @@ function createNewNote(){
                 }
                 document.getElementById('noteTitle').value = notes[index].notetitle;
                 document.getElementById('noteText').value = notes[index].notetext;
+                localStorage.setItem("titleValue", notes[index].notetitle);
+                localStorage.setItem("bodyValue", notes[index].notetext);
                 div.remove();
                 notes.splice(index, 1);
                 localStorage.setItem("newNote",JSON.stringify(notes));
